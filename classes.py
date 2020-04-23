@@ -33,7 +33,7 @@ dad.age = 100
 dad.state_age()
 
 
-bob = Child("Kid1", surname, 11)
-print(bob.mum)
-print(bob.dad)
-bob.state_age()
+sam = Child("Kid1", surname, 11)
+print(sam.mum)
+print(sam.dad)
+sam.state_age()
