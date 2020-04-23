@@ -21,9 +21,6 @@ def main():
     print(FontColour.RED + "|" + " " * 48 + "|")
     print(FontColour.YELLOW + "~" * 50)
     print(Style.RESET_ALL)
-    print("{}\n{}\n{}".format(SERVER, USER, PASSWORD))
-    exit()
-
     token = get_auth_token()
 
     while True:
@@ -43,6 +40,8 @@ def main():
             get_devices(token)
         elif choice == "3":
             get_device_details_by_id(token)
+        elif choice == "4":
+            get_device_details_by_name(token)
         elif choice == "9":
             exit()
         else:
@@ -89,7 +88,7 @@ def get_site_health(auth_token):
 
     overall_health_score = overall_health['response'][0]['healthScore']
     health_score_str = str(overall_health_score)
-    print("\nOverall Health Score: " + FontColour.RED + health_score_str + Style.RESET_ALL + " out of 100")
+    print("\nOverall Health Score: " + FontColour.RED + health_score_str + Style.RESET_ALL + " out of 100\n")
 
 
 def get_devices(auth_token, get_all_devices=True):
